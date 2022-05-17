@@ -14,7 +14,7 @@ RUN echo 'vm.max_map_count=262144' >> /etc/sysctl.conf
 # configure plugins
 RUN /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-icu
 RUN /usr/share/elasticsearch/bin/elasticsearch-plugin install repository-s3 --batch
-
+RUN /usr/share/elasticsearch/bin/elasticsearch-plugin install repository-azure --batch
 # elasticsearch config
 ADD elasticsearch.yml /usr/share/elasticsearch/config/
 RUN chown elasticsearch:elasticsearch config/elasticsearch.yml
